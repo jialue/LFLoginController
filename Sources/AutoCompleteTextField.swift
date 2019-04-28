@@ -22,11 +22,11 @@ open class AutoCompleteTextField: UITextField {
     }
     
     /// AutoCompleteTextField delegate
-    open weak var autoCompleteTextFieldDelegate: AutoCompleteTextFieldDelegate!
+    open weak var autoCompleteTextFieldDelegate: UITextFieldDelegate!
     
     // AutoCompleteTextField delegate accessible through IB
     weak open override var delegate: UITextFieldDelegate? {
-        set (x) { autoCompleteTextFieldDelegate = x as? AutoCompleteTextFieldDelegate }
+        set (x) { autoCompleteTextFieldDelegate = x as? UITextFieldDelegate }
         get { return autoCompleteTextFieldDelegate }
     }
     
@@ -101,7 +101,7 @@ open class AutoCompleteTextField: UITextField {
     }
     
     /// Initialize `AutoCompleteTextField` with `AutoCompleteTextFieldDataSource` and optional `AutoCompleteTextFieldDelegate`
-    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate! = nil) {
+    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: UITextFieldDelegate! = nil) {
         self.init(frame: frame)
         
         autoCompleteTextFieldDataSource = dataSource
