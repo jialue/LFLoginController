@@ -68,17 +68,17 @@ extension AutoCompleteTextField: UITextFieldDelegate {
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-//        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldDidEndEditing? else { return }
+        //        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldDidEndEditing? else { return }
         
-//        delegateCall(self)
-        autoCompleteTextFieldDelegate.textFieldDidEndEditing!(self)
+        //        delegateCall(self)
+        autoCompleteTextFieldDelegate.textFieldDidEndEditing?(self)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textField(_:changeCharactersInRange:replacementString:) else { return true }
+        //        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textField(_:changeCharactersInRange:replacementString:) else { return true }
         
-        return autoCompleteTextFieldDelegate.textField!(textField, shouldChangeCharactersIn: range, replacementString: string)
+        return autoCompleteTextFieldDelegate.textField?(textField, shouldChangeCharactersIn: range, replacementString: string) ?? true
     }
     
     public func textFieldShouldClear(_ textField: UITextField) -> Bool {
